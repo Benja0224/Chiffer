@@ -1,0 +1,23 @@
+{
+  "name": "chiffer",
+  "version": "1.0.0",
+  "description": "Sida för att chiffrera och dechiffrera scoutchiffer.",
+  "main": "index.js",
+  "type" : "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benja0224/Chiffer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benja0224/Chiffer/issues"
+  },
+  "homepage": "https://github.com/Benja0224/Chiffer#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
