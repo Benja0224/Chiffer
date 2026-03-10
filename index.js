@@ -11,7 +11,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
+  res.render(join(__dirname, 'templates/index.ejs'));
 });
 
 app.use(express.static(path.join(__dirname, 'fonts')));
