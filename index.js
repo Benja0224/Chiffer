@@ -3,6 +3,7 @@ import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import path from 'node:path';
+import Database from 'better-sqlite3';
 
 const app = express();
 const server = createServer(app);
@@ -21,3 +22,10 @@ app.use(express.static(path.join(__dirname, 'scripts')));
 server.listen(3000, () => {
   console.log('server running at http://localhost:3000');
 });
+
+
+const db = new Database('ciphers.db');
+db.pragma('journal_mode = WAL');
+
+const stmt = db.prepare('SELECT descr FROM Ciphers');
+console.log(stmt.all());
