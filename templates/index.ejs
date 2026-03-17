@@ -1,10 +1,11 @@
-<%- include("general/header.ejs") %> 
+<%- include("general/header.ejs")%> 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
       <h3>HOME</h3>
       <p>
-          Hej och välkommna till scoutkåren Wallinums chiffer generator. <br>
-          Andra bra chiffer resurser kan hittas via länkarna nedan:
+        
+        Hej och välkommna till scoutkåren Wallinums chiffer generator. <br>
+        Andra bra chiffer resurser kan hittas via länkarna nedan:
       </p>
       <ul>
           <li><a href="chiffernyckel_final.pdf">Chiffernyckel(pdf)</a></li> 
@@ -234,10 +235,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="modalLabel">Hjälp</h4>
+                <h4 class="modal-title" id="modalLabel">Hjälp <%- title%></h4>
             </div>
             <div class="modal-body">
-                Nåt gick fel...
+                <%= help !== undefined ? help : 'Hjälpen saknas' %></h1>
             </div>
         </div>
     </div>

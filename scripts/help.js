@@ -1,5 +1,5 @@
 const helpTexts = {
-    scout:"FiHur varianternas nycklar ser ut kan man se i stora chiffernyckeln (pdf) som finns länkad på startsidan.", 
+    scout:"Hur varianternas nycklar ser ut kan man se i stora chiffernyckeln (pdf) som finns länkad på startsidan.", 
     tvilling:"Om meddelandena är av olika längd så läggs det till mellanslag, det är alltså fördelaktit att hålla längden så nära varandra som möjligt.", 
     back:"Tipps: Punktuation och stora bokstäver i början av ord och meningar gör det lättare att lista ut chiffret.",
     zick:"För att Zic Zac chiffret ska kunna läsas väl bör man välja en monospace font, tex Courier.",
