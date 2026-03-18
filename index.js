@@ -12,12 +12,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 app.get('/', (req, res) => {
-  res.render(join(__dirname, 'templates/index.ejs'), {help : helpTexts.scout, title: 'Scout', scriptName:'chiffer.js'});
+  res.render(join(__dirname, 'templates/index.ejs'), data);
+});
+app.get('/:chiffer', (req, res) => {
+  console.log(req.params.chiffer)
+  let data = getData(req.params.chiffer);
+  res.render(join(__dirname, 'templates/index.ejs'), data);
 });
 
-app.use(express.static(path.join(__dirname, 'fonts')));
-app.use(express.static(path.join(__dirname, 'styles')));
-app.use(express.static(path.join(__dirname, 'scripts')));
+
+app.use(express.static('public'));
 
 server.listen(3000, () => {
   console.log('server running at http://localhost:3000');
@@ -26,6 +30,11 @@ server.listen(3000, () => {
 
 const db = new Database('ciphers.db');
 db.pragma('journal_mode = WAL');
+const stmt = db.prepare('SELECT cipher_name, script_file, descr FROM Ciphers WHERE cipher_id = ?');
 
-const stmt = db.prepare('SELECT descr FROM Ciphers');
-console.log(stmt.all());
+
+function getData(cipher){
+  let obj = stmt.get(cipher);
+  console.log(obj);
+  return {help : obj.descr, title: obj.cipher_name, scriptName:obj.script_file};
+};

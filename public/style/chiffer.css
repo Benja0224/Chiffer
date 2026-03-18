@@ -41,12 +41,12 @@ textarea{
 
 @font-face {
     font-family: "Bradgard";
-    src: url(/pagod.ttf) format("truetype");
+    src: url(fonts/pagod.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Runes";
-    src: url(/HaraldRunic.ttf) format("truetype");
+    src: url(fonts/HaraldRunic.ttf) format("truetype");
 }
 
 #resultBrad{
