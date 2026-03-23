@@ -1,3 +1,4 @@
+
 #heading{
     background-color: silver;
     border: 1px solid;
@@ -11,42 +12,62 @@
     text-align: center;
     
 }
-.tab-content{
+.cipher-box{
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
 }
 .modal-btn{
-    display: inline;
+    position: relative;
     background-color: silver;
     border-color: darkgray;
     padding: 2px 5px 0px 5px;
-    margin-top: 3px;
+    top:-3px;
 }
 h3{
     display: inline;
     margin-right: 15px;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 600;
 }
-input{
+h4{
+    font-weight: 500;
+}
+input[type=text], textarea{
     display:block;
     margin:5px; 
+    margin-left: 0px;
+    padding: 3px;
+    border-radius: 5px;
+    width: 100%;
 }
-textarea{
-    display:block;
-    margin:5px; 
-}
+
 #text{
     width:300px;
     height:200px;
 }
 
+.button-box{
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+}
+
+.button-box button{
+    padding: 5px;
+}
+
 @font-face {
     font-family: "Bradgard";
-    src: url(fonts/pagod.ttf) format("truetype");
+    src: url(/fonts/pagod.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Runes";
-    src: url(fonts/HaraldRunic.ttf) format("truetype");
+    src: url(/fonts/HaraldRunic.ttf) format("truetype");
 }
 
 #resultBrad{

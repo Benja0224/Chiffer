@@ -1,0 +1,38 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+            <span>
+                <h3>ASCII</h3><button type="button" onclick="setModal('ascii')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+            </span>
+            <form>
+                <h4>Alternativ</h4>
+                <div class="radio" id="optASCIIsiff">
+                    <label><input type="radio" onclick="asciiControl('dec')" name="optradio" checked="checked">Decimal</label>
+                    <label><input type="radio" onclick="asciiControl('bin')" name="optradio">Binär</label>
+                    <label><input type="radio" onclick="asciiControl('bin')" name="optradio">Hexadecimal</label>
+                </div>
+            </form>
+            <form>
+                <h4>Text</h4>
+                <textarea rows="1" id="textASCII">a</textarea>
+                <div style="display: none;" id="asciiLogicBox">
+                    <h4>Logisk kryptering</h4>
+                    <div class="radio" id="optASCIIlogic">
+                        <label><input type="radio" name="optradio" checked="checked">Inget</label>
+                        <label><input type="radio" name="optradio">AND</label>
+                        <label><input type="radio" name="optradio">XOR</label>
+                        <label><input type="radio" name="optradio">NOT</label>
+                    </div>
+                    <h4>Lösenord</h4>
+                    <input id="logicInput" value="key">
+                    
+                </div>
+            </form> 
+            <span class="button-box">
+                <button onClick="encodeASCII()" id="#">encode</button>
+                <button onClick="decodeASCII()" id="#">decode</button> 
+            </span>
+             
+            
+            <div id="resultASCII" ></div>
+    </div>
+<%- include("general/footer.ejs")%> 

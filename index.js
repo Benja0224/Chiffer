@@ -12,16 +12,28 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 app.get('/', (req, res) => {
-  res.render(join(__dirname, 'templates/index.ejs'), data);
+  res.render(join(__dirname, 'templates/index.ejs'), {help : '', title: '', scriptName:''});
+})
+app.get('/404', (req, res) => {
+  console.log("test");
+  res.sendFile(join(__dirname, '404.html'));
 });
-app.get('/:chiffer', (req, res) => {
-  console.log(req.params.chiffer)
+app.get('/:chiffer', (req, res, next) => {
+  console.log(req.params.chiffer);
   let data = getData(req.params.chiffer);
-  res.render(join(__dirname, 'templates/index.ejs'), data);
+  console.log(typeof data);
+  if(typeof data == 'undefined'){
+    console.log('rerouting');
+    res.redirect('/404');
+  }
+  res.render(join(__dirname, 'templates/' + req.params.chiffer + '.ejs'), data);
 });
+
 
 
 app.use(express.static('public'));
+
+
 
 server.listen(3000, () => {
   console.log('server running at http://localhost:3000');
@@ -35,6 +47,6 @@ const stmt = db.prepare('SELECT cipher_name, script_file, descr FROM Ciphers WHE
 
 function getData(cipher){
   let obj = stmt.get(cipher);
-  console.log(obj);
-  return {help : obj.descr, title: obj.cipher_name, scriptName:obj.script_file};
+  let out = typeof obj !== 'undefined' ? {help : obj.descr, title: obj.cipher_name, scriptName:obj.script_file} : undefined;
+  return out;
 };

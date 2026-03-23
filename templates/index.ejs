@@ -1,5 +1,5 @@
 <%- include("general/header.ejs")%> 
-  <div class="tab-content">
+  
     <div id="home" class="tab-pane fade in active">
       <h3>HOME</h3>
       <p>
@@ -13,239 +13,21 @@
           <li><a href="https://hasselby.scout.se/for-scouter/chiffer/scoutchiffer/">Scoutchiffer font</a></li> 
       </ul>
     </div>
-    <div id="siff" class="tab-pane fade">
-        <h3>Sifferchiffer</h3><button type="button" onclick="setModal('sifferchiffer')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-        <form>
-            <div class="radio" id="optSiff">
-                <label><input type="radio" name="optradio" checked="checked">Använd a = 0</label>
-                <label><input type="radio" name="optradio">Använd a = 1</label>
-            </div>
-            <h4>Text</h4>
-            <textarea rows="1" id="textSiff" >abc</textarea>
-        </form> 
-        <button onClick="encodeSiff()" id="#">encode</button>  
-        <button onClick="decodeSiff()" id="#">decode</button>  
-        <div id="resultSiff"></div>
-    </div>
-    <div id="vig" class="tab-pane fade">
-      <h3>Vigenere</h3><button type="button" onclick="setModal('vigenere')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Alfabete</h4>
-                <div class="radio" id="optVig">
-                    <label><input type="radio" name="optradio" checked="checked">Svenskt (med W)</label>
-                    <label><input type="radio" name="optradio">Svenskt (utan W)</label>
-                    <label><input type="radio" name="optradio">Engelskt</label>
-                </div>
-                <h4>Key</h4>
-                <input id="key" value="abc">
-                <h4>Text</h4>
-                <textarea rows="1" id="text" >abc</textarea>
-            </form> 
-            <button onClick="encodeVig()" id="#">encode</button>  
-            <button onClick="decodeVig()" id="#">decode</button>  
-            <div id="result"></div>
-    </div>
-    <div id="shift" class="tab-pane fade">
-      <h3>Förskjutning</h3><button type="button" onclick="setModal('shift')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Förskjutning</h4>
-                <input id="shift_input" value="1">
-                <h4>Alfabete</h4>
-                <div class="radio" id="optShift">
-                    <label><input type="radio" name="optradio" checked="checked">Svenskt (med W)</label>
-                    <label><input type="radio" name="optradio">Svenskt (utan W)</label>
-                    <label><input type="radio" name="optradio">Engelskt</label>
-                </div>
-                <h4>Text</h4>
-                <textarea rows="1" id="shift_text" >abc</textarea>
-            </form> 
-            <button onClick="encodeShift()" id="#">encode</button>  
-            <button onClick="decodeShift()" id="#">decode</button>  
-            <div id="resultShift"></div>
-    </div>
-    <div id="scout" class="tab-pane fade">
-          <h3>Scout</h3><button type="button" onclick="setModal('scout')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Varianter</h4>
-                <div class="radio" id="optScout">
-                    <label><input type="radio" name="optradio" checked="checked">Vanligt</label>
-                    <label><input type="radio" name="optradio">Lodrätt</label>
-                    <label><input type="radio" name="optradio">Kringla</label>
-                </div>
-                <h4>Text</h4>
-                <textarea rows="1" id="textScout" >Ss</textarea>
-            </form> 
-            <button onClick="encodeScout()" id="#">encode</button>
-            <button onClick="decodeScout()" id="#">decode</button>  
-            <div id="resultScout"></div>
-    </div>
-    <div id="twin" class="tab-pane fade in">
-          <h3>Tvillings chiffer</h3><button type="button" onclick="setModal('tvilling')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Text 1</h4>
-                <textarea rows="1" id="textTwin1" >a</textarea>
-                <h4>Text 2</h4>
-                <textarea rows="1" id="textTwin2" >e</textarea>
-            </form> 
-            <button onClick="encodeTwin()" id="#">encode</button>
-            <button onClick="decodeTwin()" id="#">decode</button>  
-            <div id="resultTwin1"></div>
-            <div id="resultTwin2"></div>
-    </div>
-    <div id="bak" class="tab-pane fade in">
-          <h3>Baklänges</h3><button type="button" onclick="setModal('back')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Text</h4>
-                <textarea rows="1" id="textBack" >a</textarea>
-            </form> 
-            <button onClick="back()" id="#">encode</button>
-            <button onClick="back()" id="#">decode</button>  
-            <div id="resultBack"></div>
-    </div>
-    <div id="zigZag" class="tab-pane fade in">
-          <h3>Zick zack</h3><button type="button" onclick="setModal('zick')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Text</h4>
-                <textarea rows="1" id="textZigZag" >a</textarea>
-            </form> 
-            <button onClick="encodeZigZag()" id="#">encode</button>  
-            
-            <div id="resultZigZag" style="overflow-x: auto; font-family: 'Courier New', courier, Monospace;"></div>
-    </div>
-    <div id="t9" class="tab-pane fade in">
-          <h3>T9</h3><button type="button" onclick="setModal('t9')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Text</h4>
-                <textarea rows="1" id="textT9" >a</textarea>
-            </form> 
-            <button onClick="encodeT9()" id="#">encode</button>
-            <button onClick="decodeT9()" id="#">decode</button>  
-            
-            <div id="resultT9" ></div>
-    </div>
-    <div id="morse" class="tab-pane fade in">
-          <h3>Morse</h3><button type="button" onclick="setModal('morse')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Alternativ</h4>
-                <div class="radio" id="optMorse">
-                    <label><input type="radio" name="optradio" checked="checked">. - , /</label>
-                    <label><input type="radio" name="optradio">&bull; &ndash; _ |</label>
-                    <label><input type="radio" name="optradio">k l , _</label>
-                </div>
-                <h4>Text</h4>
-                <textarea rows="1" id="textMorse" >a</textarea>
-            </form> 
-            <button onClick="encodeMorse()" id="#">encode</button>
-            <button onClick="decodeMorse()" id="#" disabled>decode</button>  
-            
-            <div id="resultMorse" ></div>
-    </div>
-    <div id="ascii" class="tab-pane fade in">
-          <h3>ASCII</h3><button type="button" onclick="setModal('ascii')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Alternativ</h4>
-                <div class="radio" id="optASCIIsiff">
-                    <label><input type="radio" onclick="asciiControl('dec')" name="optradio" checked="checked">Decimal</label>
-                    <label><input type="radio" onclick="asciiControl('bin')" name="optradio">Binär</label>
-                    <label><input type="radio" onclick="asciiControl('bin')" name="optradio">Hexadecimal</label>
-                </div>
-            </form>
-            <form>
-                <h4>Text</h4>
-                <textarea rows="1" id="textASCII">a</textarea>
-                <div style="display: none;" id="asciiLogicBox">
-                    <h4>Logisk kryptering</h4>
-                    <div class="radio" id="optASCIIlogic">
-                        <label><input type="radio" name="optradio" checked="checked">Inget</label>
-                        <label><input type="radio" name="optradio">AND</label>
-                        <label><input type="radio" name="optradio">XOR</label>
-                        <label><input type="radio" name="optradio">NOT</label>
-                    </div>
-                    <h4>Lösenord</h4>
-                    <input id="logicInput" value="key">
-                    
-                </div>
-            </form> 
-            <button onClick="encodeASCII()" id="#">encode</button>
-            <button onClick="decodeASCII()" id="#">decode</button>  
-            
-            <div id="resultASCII" ></div>
-    </div>
-    <div id="play" class="tab-pane fade">
-      <h3>Playfairchiffer</h3><button type="button" onclick="setModal('playfair')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Key</h4>
-                <input id="playKey" value="scout">
-                <h4>Text</h4>
-                <textarea rows="1" id="playText" >Lorem Ipsum</textarea>
-            </form> 
-            <button onClick="encodePlay()" id="#">encode</button>  
-            <button onClick="decodePlay()" id="#">decode</button>  
-            <div id="resultPlay"></div>
-    </div>
-    <div id="brad" class="tab-pane fade">
-      <h3>Brädgårdschiffer</h3><button type="button" onclick="setModal('pagod')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Text</h4>
-                <textarea rows="1" id="bradText" >Lorem Ipsum</textarea>
-            </form> 
-            <button onClick="encodeBrad()" id="#">encode</button>  
-            <div id="resultBrad"></div>
-    </div>
-    <div id="rune" class="tab-pane fade">
-      <h3>Runor</h3><button type="button" onclick="setModal('rune')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Text</h4>
-                <textarea rows="1" id="runeText" >Lorem Ipsum</textarea>
-            </form> 
-            <button onClick="encodeRunes()" id="#">encode</button>  
-            <div id="resultRune"></div>
-    </div>
-    <div id="bok" class="tab-pane fade">
-      <h3>Bokstavschiffer</h3><button type="button" onclick="setModal('bokstavschiffer')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
-            <form>
-                <h4>Alphabete</h4>
-                <form>
-                    <div class="radio" id="optBokAlph">
-                        <label><input type="radio" name="optradio" checked="checked">Sve (med W)</label>
-                        <label><input type="radio" name="optradio">Sve (utan W)</label>
-                        <label><input type="radio" name="optradio">Eng</label>
-                    </div>
-                </form>
-                <h4>Key</h4>
-                <form>
-                    <div class="radio" id="optBokKey">
-                        <label><input type="radio" onclick="bokControl('off')" name="optradio" checked="checked">Slumpmässigt</label>
-                        <label><input type="radio" onclick="bokControl('off')" name="optradio">Inverterat</label>
-                        <label><input type="radio" onclick="bokControl('on')" name="optradio">Lösenord</label>
-                    </div>
-                </form>
-                <input id="bokKey" value="scout">
-                <h4>Text</h4>
-                <textarea rows="1" id="bokText" >Lorem Ipsum!</textarea>
-            <button onClick="encodeBok()" id="#">encode</button>  
-            <button onClick="decodeBok()" id="#">decode</button>  
-            <div id="resultBok"></div>
-    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
       
 
-<!-- The modal -->
-<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="modalLabel">Hjälp <%- title%></h4>
-            </div>
-            <div class="modal-body">
-                <%= help !== undefined ? help : 'Hjälpen saknas' %></h1>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>   
-</body>
 
-</html>
 

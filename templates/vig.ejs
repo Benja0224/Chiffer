@@ -1,0 +1,24 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+            <h3>Vigenere</h3><button type="button" onclick="setModal('vigenere')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>
+        <form>
+            <h4>Alfabete</h4>
+            <div class="radio" id="optVig">
+                <label><input type="radio" name="optradio" checked="checked">Svenskt (med W)</label>
+                <label><input type="radio" name="optradio">Svenskt (utan W)</label>
+                <label><input type="radio" name="optradio">Engelskt</label>
+            </div>
+            <h4>Key</h4>
+            <input id="key" value="abc">
+            <h4>Text</h4>
+            <textarea rows="1" id="text" >abc</textarea>
+        </form> 
+        <span class="button-box">
+        <button onClick="encodeVig()" id="#">encode</button>  
+        <button onClick="decodeVig()" id="#">decode</button>  
+        </span>
+        <div id="result"></div>
+</div>
+<%- include("general/footer.ejs")%> 

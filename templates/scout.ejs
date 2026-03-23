@@ -1,0 +1,24 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+        <span>
+            <h3>Scout</h3>
+            <button type="button" onclick="setModal('scout')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+        </span>
+        <form>
+            <h4>Varianter</h4>
+            <div class="radio" id="optScout">
+                <label><input type="radio" name="optradio" checked="checked">Vanligt</label>
+                <label><input type="radio" name="optradio">Lodrätt</label>
+                <label><input type="radio" name="optradio">Kringla</label>
+            </div>
+            <h4>Text</h4>
+            <textarea rows="1" id="textScout" >Ss</textarea>
+        </form> 
+        <span class="button-box">
+            <button onClick="encodeScout()" id="#">encode</button>
+            <button onClick="decodeScout()" id="#">decode</button> 
+        </span>
+         
+        <div id="resultScout"></div>
+</div>
+<%- include("general/footer.ejs")%> 

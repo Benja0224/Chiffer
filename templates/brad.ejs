@@ -1,0 +1,13 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+    <h3>Brädgårdschiffer</h3><button type="button" onclick="setModal('pagod')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>
+        <form>
+            <h4>Text</h4>
+            <textarea rows="1" id="bradText" >Lorem Ipsum</textarea>
+        </form> 
+        <button onClick="encodeBrad()" id="#">encode</button>  
+        <div id="resultBrad"></div>
+</div>
+<%- include("general/footer.ejs")%> 

@@ -1,0 +1,13 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+      <h3>Runor</h3><button type="button" onclick="setModal('rune')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>
+            <form>
+                <h4>Text</h4>
+                <textarea rows="1" id="runeText" >Lorem Ipsum</textarea>
+            </form> 
+            <button onClick="encodeRunes()" id="#">encode</button>  
+            <div id="resultRune"></div>
+    </div>
+<%- include("general/footer.ejs")%> 

@@ -1,0 +1,19 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+        <h3>Tvillings chiffer</h3><button type="button" onclick="setModal('tvilling')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>
+        <form>
+            <h4>Text 1</h4>
+            <textarea rows="1" id="textTwin1" >a</textarea>
+            <h4>Text 2</h4>
+            <textarea rows="1" id="textTwin2" >e</textarea>
+        </form> 
+        <span class="button-box">
+        <button onClick="encodeTwin()" id="#">encode</button>
+        <button onClick="decodeTwin()" id="#">decode</button>  
+        </span>
+        <div id="resultTwin1"></div>
+        <div id="resultTwin2"></div>
+</div>
+<%- include("general/footer.ejs")%> 

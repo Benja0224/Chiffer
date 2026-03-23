@@ -1,0 +1,32 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+        <h3>Bokstavschiffer</h3><button type="button" onclick="setModal('bokstavschiffer')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>  
+            <form>
+                <h4>Alphabete</h4>
+                <form>
+                    <div class="radio" id="optBokAlph">
+                        <label><input type="radio" name="optradio" checked="checked">Sve (med W)</label>
+                        <label><input type="radio" name="optradio">Sve (utan W)</label>
+                        <label><input type="radio" name="optradio">Eng</label>
+                    </div>
+                </form>
+                <h4>Key</h4>
+                <form>
+                    <div class="radio" id="optBokKey">
+                        <label><input type="radio" onclick="bokControl('off')" name="optradio" checked="checked">Slumpmässigt</label>
+                        <label><input type="radio" onclick="bokControl('off')" name="optradio">Inverterat</label>
+                        <label><input type="radio" onclick="bokControl('on')" name="optradio">Lösenord</label>
+                    </div>
+                </form>
+                <input id="bokKey" value="scout">
+                <h4>Text</h4>
+                <textarea rows="1" id="bokText" >Lorem Ipsum!</textarea>
+            <span class="button-box">
+                <button onClick="encodeBok()" id="#">encode</button>  
+                <button onClick="decodeBok()" id="#">decode</button>  
+            </span>
+            <div id="resultBok"></div>
+    </div>
+<%- include("general/footer.ejs")%> 

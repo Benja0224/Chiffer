@@ -1,0 +1,24 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+    <h3>Förskjutning</h3><button type="button" onclick="setModal('shift')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>
+        <form>
+            <h4>Förskjutning</h4>
+            <input id="shift_input" value="1">
+            <h4>Alfabete</h4>
+            <div class="radio" id="optShift">
+                <label><input type="radio" name="optradio" checked="checked">Svenskt (med W)</label>
+                <label><input type="radio" name="optradio">Svenskt (utan W)</label>
+                <label><input type="radio" name="optradio">Engelskt</label>
+            </div>
+            <h4>Text</h4>
+            <textarea rows="1" id="shift_text" >abc</textarea>
+        </form> 
+        <span class="button-box">
+        <button onClick="encodeShift()" id="#">encode</button>  
+        <button onClick="decodeShift()" id="#">decode</button>  
+        </span>
+        <div id="resultShift"></div>
+</div>
+<%- include("general/footer.ejs")%> 

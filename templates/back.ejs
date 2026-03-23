@@ -1,0 +1,16 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+        <h3>Baklänges</h3><button type="button" onclick="setModal('back')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>
+        <form>
+            <h4>Text</h4>
+            <textarea rows="1" id="textBack" >a</textarea>
+        </form> 
+        <span class="button-box">
+            <button onClick="back()" id="#">encode</button>
+            <button onClick="back()" id="#">decode</button>
+        </span>
+        <div id="resultBack"></div>
+</div>
+<%- include("general/footer.ejs")%> 

@@ -1,0 +1,20 @@
+<%- include("general/header.ejs")%> 
+<div class='cipher-box'>
+    <span>
+    <h3>Sifferchiffer</h3><button type="button" onclick="setModal('sifferchiffer')" class="btn btn-primary btn-lg modal-btn" data-toggle="modal" data-target="#infoModal"><i class="glyphicon glyphicon-question-sign"></i></button>
+    </span>
+    <form>
+        <div class="radio" id="optSiff">
+            <label><input type="radio" name="optradio" checked="checked">Använd a = 0</label>
+            <label><input type="radio" name="optradio">Använd a = 1</label>
+        </div>
+        <h4>Text</h4>
+        <textarea rows="1" id="textSiff" >abc</textarea>
+    </form> 
+    <span class="button-box">
+    <button onClick="encodeSiff()" id="#">encode</button>  
+    <button onClick="decodeSiff()" id="#">decode</button>  
+    </span>
+    <div id="resultSiff"></div>
+</div>
+<%- include("general/footer.ejs")%> 
