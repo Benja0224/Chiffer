@@ -1,1 +1,5 @@
 node_modules/
+schema.sql
+tmpdb.sql
+ciphers.db-shm
+ciphers.db-wal
