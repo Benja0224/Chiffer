@@ -1,2 +1,2 @@
 # Chiffer
-Sida för att chiffrera och dechiffrera scoutchiffer.
+En sida för att chiffrera och dechiffrera en rad olika scoutchiffer. 
