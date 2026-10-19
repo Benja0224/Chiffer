@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Benja0224/Chiffer#readme",
   "dependencies": {
-    "better-sqlite3": "^12.6.2",
+    "better-sqlite3": "^12.11.1",
     "ejs": "^5.0.1",
     "express": "^5.2.1"
   }
