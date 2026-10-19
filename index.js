@@ -19,7 +19,7 @@ app.get('/404', (req, res) => {
   console.log("test");
   res.sendFile(join(__dirname, '404.html'));
 });
-app.get('/:chiffer', (req, res, next) => {
+app.get('/chiffer/:chiffer', (req, res, next) => {
   console.log(req.params.chiffer);
   let data = getData(req.params.chiffer);
   console.log(typeof data);
